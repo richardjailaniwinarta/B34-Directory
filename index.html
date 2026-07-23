@@ -12,24 +12,83 @@
     --surface2: #fbf0c8;
     --border: #e6d9a3;
     --accent: #e8730e;
+    --accent-rgb: 232,115,14;
     --accent2: #485d7c;
+    --accent2-rgb: 72,93,124;
     --accent3: #b8860f;
+    --accent3-rgb: 184,134,15;
     --text: #393840;
     --text-muted: #6b6a72;
+    --text-muted-rgb: 107,106,114;
     --text-dim: #a09c8e;
-    --week0: #e8730e;
-    --week1: #b8860f;
-    --week2: #2f8f6e;
-    --week3: #485d7c;
-    --week4: #7a5299;
-    --week5: #c14f7a;
-    --week6: #2a8f94;
-    --week7: #c7981a;
-    --course: #485d7c;
-    --product: #7a5299;
-    --community: #2a8f94;
-    --sa: #e8730e;
+    --week0: #e8730e; --week0-rgb: 232,115,14;
+    --week1: #b8860f; --week1-rgb: 184,134,15;
+    --week2: #2f8f6e; --week2-rgb: 47,143,110;
+    --week3: #485d7c; --week3-rgb: 72,93,124;
+    --week4: #7a5299; --week4-rgb: 122,82,153;
+    --week5: #c14f7a; --week5-rgb: 193,79,122;
+    --week6: #2a8f94; --week6-rgb: 42,143,148;
+    --week7: #c7981a; --week7-rgb: 199,152,26;
+    --course: #485d7c; --course-rgb: 72,93,124;
+    --product: #7a5299; --product-rgb: 122,82,153;
+    --community: #2a8f94; --community-rgb: 42,143,148;
+    --sa: #e8730e; --sa-rgb: 232,115,14;
+    --shadow-rgb: 57,56,64;
+    --error-color: #c0392b;
+    --header-grad-1: #fdf8ea;
+    --header-grad-2: #f9ecc4;
+    --recording-grad-1: #e8730e;
+    --recording-grad-2: #f2954a;
+    --all-week-dot: #393840;
+    --link-canva: #c1447a; --link-canva-rgb: 193,68,122;
+    --link-google: #4285f4; --link-google-rgb: 66,133,244;
+    --link-zoom: #2d8cff; --link-zoom-rgb: 45,140,255;
+    --link-default: #485d7c; --link-default-rgb: 72,93,124;
+    --toggle-icon: "🌙";
   }
+
+  [data-theme="dark"] {
+    --bg: #0a0d14;
+    --surface: #111520;
+    --surface2: #171d2e;
+    --border: #1f2942;
+    --accent: #4f7fff;
+    --accent-rgb: 79,127,255;
+    --accent2: #7c5cfc;
+    --accent2-rgb: 124,92,252;
+    --accent3: #00d4aa;
+    --accent3-rgb: 0,212,170;
+    --text: #e8edf8;
+    --text-muted: #6e7fa8;
+    --text-muted-rgb: 110,127,168;
+    --text-dim: #3d4d70;
+    --week0: #ff7c5c; --week0-rgb: 255,124,92;
+    --week1: #ffc85c; --week1-rgb: 255,200,92;
+    --week2: #5cffb8; --week2-rgb: 92,255,184;
+    --week3: #5cc8ff; --week3-rgb: 92,200,255;
+    --week4: #b85cff; --week4-rgb: 184,92,255;
+    --week5: #ff5cad; --week5-rgb: 255,92,173;
+    --week6: #5cffff; --week6-rgb: 92,255,255;
+    --week7: #ffff5c; --week7-rgb: 255,255,92;
+    --course: #4f7fff; --course-rgb: 79,127,255;
+    --product: #7c5cfc; --product-rgb: 124,92,252;
+    --community: #00d4aa; --community-rgb: 0,212,170;
+    --sa: #ff7c5c; --sa-rgb: 255,124,92;
+    --shadow-rgb: 0,0,0;
+    --error-color: #ff7c5c;
+    --header-grad-1: #0a0d14;
+    --header-grad-2: #111828;
+    --recording-grad-1: #ff4d4d;
+    --recording-grad-2: #ff7c5c;
+    --all-week-dot: #4f7fff;
+    --link-canva: #ff6b6b; --link-canva-rgb: 255,107,107;
+    --link-google: #4285f4; --link-google-rgb: 66,133,244;
+    --link-zoom: #2d8cff; --link-zoom-rgb: 45,140,255;
+    --link-default: #4f7fff; --link-default-rgb: 79,127,255;
+    --toggle-icon: "☀️";
+  }
+
+  body { transition: background 0.2s, color 0.2s; }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -46,7 +105,7 @@
     padding: 48px 48px 15px;
     border-bottom: 1px solid var(--border);
     position: relative;
-    background: linear-gradient(135deg, #fdf8ea 0%, #f9ecc4 100%);
+    background: linear-gradient(135deg, var(--header-grad-1) 0%, var(--header-grad-2) 100%);
     overflow: hidden;
   }
   header::before {
@@ -54,7 +113,7 @@
     position: absolute;
     top: -80px; right: -80px;
     width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(232,115,14,0.14) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(var(--accent-rgb),0.14) 0%, transparent 70%);
     pointer-events: none;
   }
   header::after {
@@ -62,7 +121,7 @@
     position: absolute;
     bottom: -60px; left: 30%;
     width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(72,93,124,0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(var(--accent2-rgb),0.1) 0%, transparent 70%);
     pointer-events: none;
   }
   .header-tag {
@@ -72,8 +131,8 @@
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
-    background: rgba(232,115,14,0.1);
-    border: 1px solid rgba(232,115,14,0.25);
+    background: rgba(var(--accent-rgb),0.1);
+    border: 1px solid rgba(var(--accent-rgb),0.25);
     padding: 4px 12px;
     border-radius: 20px;
     display: inline-block;
@@ -119,6 +178,40 @@
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  /* THEME TOGGLE */
+  .theme-toggle {
+    position: absolute;
+    top: 24px; right: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px 6px 6px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all 0.15s;
+    z-index: 2;
+  }
+  .theme-toggle:hover { border-color: var(--accent); color: var(--text); }
+  .theme-toggle-icon {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: var(--surface2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    .theme-toggle { top: 16px; right: 16px; padding: 5px 10px 5px 5px; }
+    .theme-toggle-label { display: none; }
   }
 
   /* LAYOUT */
@@ -192,7 +285,7 @@
     padding: 2px 7px;
     border-radius: 10px;
   }
-  .week-btn.active .week-count { background: rgba(232,115,14,0.15); color: var(--accent); }
+  .week-btn.active .week-count { background: rgba(var(--accent-rgb),0.15); color: var(--accent); }
 
   .filter-btn {
     display: flex;
@@ -344,9 +437,9 @@
     opacity: 0;
     transition: opacity 0.18s;
   }
-  .task-card:hover { border-color: rgba(232,115,14,0.35); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(57,56,64,0.12); }
+  .task-card:hover { border-color: rgba(var(--accent-rgb),0.35); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(var(--shadow-rgb),0.2); }
   .task-card:hover::before { opacity: 1; }
-  .task-card.expanded { border-color: rgba(232,115,14,0.4); background: var(--surface2); }
+  .task-card.expanded { border-color: rgba(var(--accent-rgb),0.4); background: var(--surface2); }
   .task-card.expanded::before { opacity: 1; }
 
   .card-top {
@@ -407,20 +500,20 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     color: var(--accent3);
-    background: rgba(184,134,15,0.1);
+    background: rgba(var(--accent3-rgb),0.1);
     padding: 2px 8px;
     border-radius: 20px;
-    border: 1px solid rgba(184,134,15,0.2);
+    border: 1px solid rgba(var(--accent3-rgb),0.2);
   }
   .has-updates-badge {
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.5px;
     color: var(--accent2);
-    background: rgba(72,93,124,0.1);
+    background: rgba(var(--accent2-rgb),0.1);
     padding: 2px 8px;
     border-radius: 20px;
-    border: 1px solid rgba(72,93,124,0.2);
+    border: 1px solid rgba(var(--accent2-rgb),0.2);
   }
 
   /* EXPANDED CARD DETAIL */
@@ -537,7 +630,7 @@
     font-size: 12px;
     font-weight: 500;
     color: #fff;
-    background: linear-gradient(135deg, #e8730e, #f2954a);
+    background: linear-gradient(135deg, var(--recording-grad-1), var(--recording-grad-2));
     padding: 6px 14px;
     border-radius: 20px;
     text-decoration: none;
@@ -562,7 +655,7 @@
     align-items: center;
     gap: 14px;
   }
-  .link-card:hover { border-color: rgba(232,115,14,0.4); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(57,56,64,0.1); }
+  .link-card:hover { border-color: rgba(var(--accent-rgb),0.4); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(var(--shadow-rgb),0.15); }
   .link-card-icon {
     width: 42px; height: 42px;
     border-radius: 10px;
@@ -708,7 +801,7 @@
     background: var(--accent);
     flex-shrink: 0;
     margin-top: 5px;
-    box-shadow: 0 0 0 3px rgba(232,115,14,0.15);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb),0.15);
   }
   .changelog-body { flex: 1; }
   .changelog-task { font-size: 12px; color: var(--text-dim); margin-bottom: 4px; }
@@ -756,7 +849,7 @@
     text-align: center;
     padding: 10px 20px;
     border-top: 1px solid var(--border);
-    background: linear-gradient(to bottom, transparent, #fbf0c8);
+    background: linear-gradient(to bottom, transparent, var(--surface2));
     margin-top: auto;
     font-size: 13px;
     color: var(--text-muted);
@@ -783,6 +876,10 @@
 <body>
 
 <header>
+  <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+    <span class="theme-toggle-icon" id="themeToggleIcon">🌙</span>
+    <span class="theme-toggle-label" id="themeToggleLabel">Mode Gelap</span>
+  </button>
   <div class="header-tag">Small Group Richard Internal</div>
   <h1><span>B34</span> Directory</h1>
   <p class="header-sub">Directory ini, Berisi semua hal yang penting yang mendukung jalan nya SGB VA Course. <br> Khusus Small Group Richard!!</p>
@@ -795,7 +892,7 @@
     <div class="sidebar-section">
       <div class="sidebar-label">Filter by Week</div>
       <button class="week-btn active" onclick="filterWeek('all')" id="btn-all">
-        <span class="week-dot" style="background:#393840"></span>
+        <span class="week-dot" style="background:var(--all-week-dot)"></span>
         All Weeks
         <span class="week-count" id="cnt-all">0</span>
       </button> <button class="week-btn" onclick="filterWeek('Week 1')" id="btn-w1">
@@ -856,8 +953,8 @@
       <div class="updates-layout">
         <div class="updates-panel">
           <div class="updates-panel-header">
-            <div class="updates-panel-icon" style="background:rgba(122,82,153,0.15)">
-              <svg width="16" height="16" fill="none" stroke="#7a5299" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <div class="updates-panel-icon" style="background:rgba(var(--product-rgb),0.15)">
+              <svg width="16" height="16" fill="none" stroke="var(--product)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
             <div class="updates-panel-title">Updates from Product Team</div>
           </div>
@@ -865,8 +962,8 @@
         </div>
         <div class="updates-panel">
           <div class="updates-panel-header">
-            <div class="updates-panel-icon" style="background:rgba(42,143,148,0.15)">
-              <svg width="16" height="16" fill="none" stroke="#2a8f94" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div class="updates-panel-icon" style="background:rgba(var(--community-rgb),0.15)">
+              <svg width="16" height="16" fill="none" stroke="var(--community)" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <div class="updates-panel-title">Updates from Other Dept</div>
           </div>
@@ -909,7 +1006,7 @@ async function loadData() {
         <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
         </svg>
-        <div style="color:#c0392b;font-weight:600;margin-top:8px">Gagal memuat data</div>
+        <div style="color:var(--error-color);font-weight:600;margin-top:8px">Gagal memuat data</div>
         <div style="font-size:12px;margin-top:6px;max-width:400px">
           Pastikan Google Sheet sudah dipublish ke web.<br>
           <a href="#" onclick="loadData()" style="color:var(--accent);text-decoration:none">🔄 Coba lagi</a>
@@ -1018,23 +1115,23 @@ function updateSidebarCounts() {
 }
 
 // ============ CONFIGS ============
-const weekColors = {
-  'Week 0': '#e8730e',
-  'Week 1': '#b8860f',
-  'Week 2': '#2f8f6e',
-  'Week 3': '#485d7c',
-  'Week 4': '#7a5299',
-  'Week 5': '#c14f7a',
-  'Week 6': '#2a8f94',
-  'Week 7': '#c7981a'
+const weekColorVars = {
+  'Week 0': 'week0',
+  'Week 1': 'week1',
+  'Week 2': 'week2',
+  'Week 3': 'week3',
+  'Week 4': 'week4',
+  'Week 5': 'week5',
+  'Week 6': 'week6',
+  'Week 7': 'week7'
 };
-const deptColors = {
-  'Course': '#485d7c',
-  'Product': '#7a5299',
-  'Community': '#2a8f94',
-  'SA': '#e8730e',
-  'Course Dept': '#485d7c',
-  'Product Dept': '#7a5299'
+const deptColorVars = {
+  'Course': 'course',
+  'Product': 'product',
+  'Community': 'community',
+  'SA': 'sa',
+  'Course Dept': 'course',
+  'Product Dept': 'product'
 };
 const linkIcons = { 'canva': '🎨', 'docs.google': '📄', 'zoom': '🎥', 'portal': '🔐', 'default': '🔗' };
 const dayEmojis = { 'Monday':'Mon','Tuesday':'Tue','Wednesday':'Wed','Thursday':'Thu','Friday':'Fri','Saturday':'Sat','Sunday':'Sun' };
@@ -1054,13 +1151,21 @@ function getLinkIcon(url) {
   return '🔗';
 }
 
-function getLinkColor(url) {
-  if (!url) return '#485d7c';
-  if (url.includes('canva')) return '#c1447a';
-  if (url.includes('docs.google') || url.includes('forms')) return '#4285f4';
-  if (url.includes('zoom')) return '#2d8cff';
-  if (url.includes('portal')) return '#2a8f94';
-  return '#485d7c';
+// Returns a CSS variable base name (e.g. 'link-canva') that has matching
+// --{name} and --{name}-rgb custom properties, reactive to the current theme.
+function getLinkColorVar(url) {
+  if (!url) return 'link-default';
+  if (url.includes('canva')) return 'link-canva';
+  if (url.includes('docs.google') || url.includes('forms')) return 'link-google';
+  if (url.includes('zoom')) return 'link-zoom';
+  if (url.includes('portal')) return 'community';
+  return 'link-default';
+}
+
+// Builds an inline style string for a pill/badge using a CSS var base name,
+// so colors stay correct automatically when the theme toggles.
+function badgeStyle(varBase) {
+  return `background:rgba(var(--${varBase}-rgb),0.13);color:var(--${varBase});border:1px solid rgba(var(--${varBase}-rgb),0.27)`;
 }
 
 function parseLinks(str) {
@@ -1084,11 +1189,11 @@ function parseLinks(str) {
 function getDeptTag(dept) {
   if (!dept) return '';
   const d = dept.replace(' Dept', '');
-  const color = deptColors[dept] || deptColors[d] || '#6b6a72';
-  return `<span class="dept-tag" style="background:${color}22;color:${color};border:1px solid ${color}44">${dept}</span>`;
+  const varBase = deptColorVars[dept] || deptColorVars[d] || 'accent2';
+  return `<span class="dept-tag" style="${badgeStyle(varBase)}">${dept}</span>`;
 }
 
-function getWeekColor(week) { return weekColors[week] || '#485d7c'; }
+function getWeekColorVar(week) { return weekColorVars[week] || 'course'; }
 
 // ============ RENDER SCHEDULE ============
 function renderSchedule(filtered) {
@@ -1109,10 +1214,10 @@ function renderSchedule(filtered) {
 
   for (const week of weeks) {
     if (!grouped[week]) continue;
-    const color = getWeekColor(week);
+    const colorVar = getWeekColorVar(week);
     html += `<div class="week-section" id="section-${week.replace(' ','')}">
       <div class="week-header">
-        <span class="week-badge" style="background:${color}22;color:${color};border:1px solid ${color}44">${week}</span>
+        <span class="week-badge" style="${badgeStyle(colorVar)}">${week}</span>
         <span class="week-title">${week === 'Week 0' ? 'Preparation' : week === 'Week 7' ? 'Graduation' : `${week.split(' ')[1]}`}</span>
         <span class="week-line"></span>
         <span style="font-size:12px;color:var(--text-dim);font-family:'Syne',sans-serif">${grouped[week].length} file</span>
@@ -1164,7 +1269,7 @@ function renderSchedule(filtered) {
             <div class="detail-label">Useful Links</div>
             ${links.map(l => l.url ?
               `<a href="${l.url}" target="_blank" class="link-item">
-                <div class="link-icon" style="background:${getLinkColor(l.url)}22">${getLinkIcon(l.url)}</div>
+                <div class="link-icon" style="background:rgba(var(--${getLinkColorVar(l.url)}-rgb),0.15)">${getLinkIcon(l.url)}</div>
                 <div class="link-text">
                   <span class="link-name">${l.name}</span>
                   <span class="link-url">${l.url}</span>
@@ -1172,7 +1277,7 @@ function renderSchedule(filtered) {
                 <svg class="link-arrow" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>` :
               `<div class="link-item" style="cursor:default">
-                <div class="link-icon" style="background:rgba(232,115,14,0.1)">📌</div>
+                <div class="link-icon" style="background:rgba(var(--accent-rgb),0.1)">📌</div>
                 <div class="link-text"><span class="link-name">${l.name}</span></div>
               </div>`
             ).join('')}
@@ -1181,7 +1286,7 @@ function renderSchedule(filtered) {
           ${task.product_updates ? `<div class="detail-section">
             <div class="detail-label">Updates from Product Team</div>
             <div class="update-item">
-              <span class="update-dot" style="background:#7a5299"></span>
+              <span class="update-dot" style="background:var(--product)"></span>
               <span>${task.product_updates}</span>
             </div>
           </div>` : ''}
@@ -1189,7 +1294,7 @@ function renderSchedule(filtered) {
           ${task.other_dept_updates ? `<div class="detail-section">
             <div class="detail-label">Updates from Other Dept</div>
             <div class="update-item">
-              <span class="update-dot" style="background:#2a8f94"></span>
+              <span class="update-dot" style="background:var(--community)"></span>
               <span>${task.other_dept_updates}</span>
             </div>
           </div>` : ''}
@@ -1224,7 +1329,7 @@ function renderLinks() {
   html += `<div class="links-grid">`;
   withUrl.forEach(l => {
     html += `<a href="${l.url}" target="_blank" class="link-card">
-      <div class="link-card-icon" style="background:${getLinkColor(l.url)}22;font-size:20px">${getLinkIcon(l.url)}</div>
+      <div class="link-card-icon" style="background:rgba(var(--${getLinkColorVar(l.url)}-rgb),0.15);font-size:20px">${getLinkIcon(l.url)}</div>
       <div class="link-card-body">
         <span class="link-card-name">${l.name}</span>
         <span class="link-card-src">${l.url}</span>
@@ -1239,7 +1344,7 @@ function renderLinks() {
     html += `<div class="links-grid">`;
     withoutUrl.forEach(l => {
       html += `<div class="link-card" style="cursor:default;opacity:0.7">
-        <div class="link-card-icon" style="background:rgba(107,106,114,0.12);font-size:20px">📌</div>
+        <div class="link-card-icon" style="background:rgba(var(--text-muted-rgb),0.12);font-size:20px">📌</div>
         <div class="link-card-body">
           <span class="link-card-name">${l.name}</span>
           <span class="link-card-src">Task #${l.taskNo} — ${l.week}</span>
@@ -1362,7 +1467,34 @@ function switchTab(tab) {
   document.getElementById('searchBar').style.display = tab === 'schedule' ? '' : 'none';
 }
 
+// ============ THEME TOGGLE ============
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('themeToggleIcon').textContent = '☀️';
+    document.getElementById('themeToggleLabel').textContent = 'Mode Cerah';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    document.getElementById('themeToggleIcon').textContent = '🌙';
+    document.getElementById('themeToggleLabel').textContent = 'Mode Gelap';
+  }
+}
+
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+  applyTheme(next);
+  try { localStorage.setItem('b34-theme', next); } catch (e) { /* storage unavailable, theme still applies for this session */ }
+}
+
+function initTheme() {
+  let saved = null;
+  try { saved = localStorage.getItem('b34-theme'); } catch (e) { /* storage unavailable, default to light */ }
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+}
+
 // ============ INIT ============
+initTheme();
 document.getElementById('searchInput').addEventListener('input', applyFilters);
 
 loadData();
